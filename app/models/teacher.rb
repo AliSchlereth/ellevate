@@ -6,6 +6,7 @@ class Teacher < ApplicationRecord
   validates :last_name, presence: true
   validates :token, presence: true
 
+  has_many :students
 
   def self.update_or_create(auth)
     teacher = Teacher.find_by(uid: auth[:id]) || Teacher.new
