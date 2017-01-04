@@ -1,4 +1,23 @@
-Welcome to ELLevate
-Let's learn some English
+  <div class="jumbotron">
+    <div class="container-fluid">
+    <h1>Welcome to ELLevate</h1>
+    <h3>Let's learn some English</h3>
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="row">
+  </div>
+  <div class="row">
+    <div class="container-fluid">
+      <div class="panel teacher-panel col-md-5">
+        <h3>Teachers</h3>
+        <p><%= link_to "Sign in with Google", login_path, class:"btn btn-default" %></ul>
+      </div>
+      <div class="panel student-panel col-md-5">
+        <h3>Students</h3>
+        <p><%= link_to "Sign In", login_path, class:"btn btn-default"%></p>
+      </div>
 
-<%= link_to "Sign in with Google", login_path %>
+    </div>
+  </div>
+</div>
