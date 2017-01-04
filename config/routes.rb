@@ -4,4 +4,8 @@ Rails.application.routes.draw do
   get 'logout', to: "sessions#destroy"
   root "welcome#index"
   resources :students, only: [:show]
+
+  namespace :teacher do
+    get '/dashboard', to: "dashboard#show"
+  end
 end

@@ -1,0 +1,8 @@
+<%= current_user.first_name %> <%= current_user.last_name %>
+<% current_user.students.each do |student| %>
+  <%= student.username %>
+  <%= student.name %>
+  <%= student.language %>
+  <%= student.level %>
+  <%= student.pass_img.img %>
+  <% end  %>
