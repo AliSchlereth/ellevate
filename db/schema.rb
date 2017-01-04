@@ -10,10 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170104032304) do
+ActiveRecord::Schema.define(version: 20170104211328) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "pass_imgs", force: :cascade do |t|
+    t.string   "img"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sentences", force: :cascade do |t|
+    t.string   "sentence_frame"
+    t.integer  "level"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  create_table "students", force: :cascade do |t|
+    t.string   "name"
+    t.string   "username"
+    t.string   "level"
+    t.string   "language"
+    t.integer  "teacher_id"
+    t.integer  "pass_img_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["pass_img_id"], name: "index_students_on_pass_img_id", using: :btree
+    t.index ["teacher_id"], name: "index_students_on_teacher_id", using: :btree
+  end
 
   create_table "teachers", force: :cascade do |t|
     t.string   "provider"
@@ -28,4 +54,6 @@ ActiveRecord::Schema.define(version: 20170104032304) do
     t.datetime "updated_at",       null: false
   end
 
+  add_foreign_key "students", "pass_imgs"
+  add_foreign_key "students", "teachers"
 end

@@ -120,4 +120,20 @@ RSpec.describe Teacher, type: :model do
     end
   end
 
+  context "relationships" do
+    it "responds to students" do
+      user = Teacher.new(
+        provider: "google",
+        uid: "12345678910",
+        email: "first@email.com",
+        first_name: "First",
+        last_name: "Last",
+        token: "abcdefg12345",
+        refresh_token: "12345abcdefg",
+        oauth_expires_at: DateTime.now
+      )
+      expect(user).to respond_to(:students)
+    end
+  end
+
 end

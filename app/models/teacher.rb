@@ -1,4 +1,6 @@
 class Teacher < ApplicationRecord
+  has_many :students
+  
   validates :provider, presence: true
   validates :uid, presence: true
   validates :email, presence: true
