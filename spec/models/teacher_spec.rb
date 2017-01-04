@@ -35,6 +35,20 @@ RSpec.describe Teacher, type: :model do
   end
 
   context "validations" do
+    it "is invalid without a uid" do
+      user = Teacher.new(
+        provider: "google",
+        email: "first@email.com",
+        first_name: "First",
+        last_name: "Last",
+        token: "abcdefg12345",
+        refresh_token: "12345abcdefg",
+        oauth_expires_at: DateTime.now
+      )
+
+      expect(user).to_not be_valid
+    end
+
     it "is invalid without a provider" do
       user = Teacher.new(
         uid: "12345678910",
@@ -46,7 +60,62 @@ RSpec.describe Teacher, type: :model do
         oauth_expires_at: DateTime.now
       )
 
-      # user = Teacher.update_or_create(auth)
+      expect(user).to_not be_valid
+    end
+
+    it "is invalid without an email" do
+      user = Teacher.new(
+        provider: "google",
+        uid: "12345678910",
+        first_name: "First",
+        last_name: "Last",
+        token: "abcdefg12345",
+        refresh_token: "12345abcdefg",
+        oauth_expires_at: DateTime.now
+      )
+
+      expect(user).to_not be_valid
+    end
+
+    it "is invalid without a first_name" do
+      user = Teacher.new(
+        provider: "google",
+        uid: "12345678910",
+        email: "first@email.com",
+        last_name: "Last",
+        token: "abcdefg12345",
+        refresh_token: "12345abcdefg",
+        oauth_expires_at: DateTime.now
+      )
+
+      expect(user).to_not be_valid
+    end
+
+    it "is invalid without a last_name" do
+      user = Teacher.new(
+        provider: "google",
+        uid: "12345678910",
+        email: "first@email.com",
+        first_name: "First",
+        token: "abcdefg12345",
+        refresh_token: "12345abcdefg",
+        oauth_expires_at: DateTime.now
+      )
+
+      expect(user).to_not be_valid
+    end
+
+    it "is invalid without a token" do
+      user = Teacher.new(
+        provider: "google",
+        uid: "12345678910",
+        email: "first@email.com",
+        first_name: "First",
+        last_name: "Last",
+        refresh_token: "12345abcdefg",
+        oauth_expires_at: DateTime.now
+      )
+
       expect(user).to_not be_valid
     end
   end
