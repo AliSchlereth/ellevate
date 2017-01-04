@@ -1,11 +1,12 @@
 .navbar-default {
-  background-color: #1273e2;
+  // background-color: #1273e2;
+  background-color: #8DCDC1;
 }
 
 .navbar-brand {
   // http://www.colorcombos.com/color-schemes/137/ColorCombo137.html
-  color: lightgrey !important;
-  text-shadow: 1px 1px grey;
+  color: #EB6E44 !important;
+  text-shadow: 1px 1px darkgrey;
   // float: none;
   // padding-top: 20px;
 }
@@ -14,4 +15,8 @@
   float: left;
   text-align: center;
   width: 100%;
+}
+
+a {
+  color: black !important;
 }
