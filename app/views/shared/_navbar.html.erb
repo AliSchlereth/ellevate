@@ -5,7 +5,6 @@
         <li><%= link_to "ELLevate", root_path, class:"navbar-brand" %></li>
       <!-- </div> -->
       <% if current_user %>
-        <li><a href="#">Welcome <%= current_user.first_name %> <%= current_user.last_name %></a></li>
         <li class="log-out pull-right"> <%= link_to "Log Out", logout_path %></li>
       <% end %>
     </ul>
