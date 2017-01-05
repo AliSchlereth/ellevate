@@ -8,7 +8,6 @@ var onGetStudents = function(data) {
       '<div class="col-md-2">' + student.name + '</div>' +
       '<div class="col-md-2">' + student.language + '</div>' +
       '<div class="col-md-2">' + student.level + '</div>' +
-      '<div class="col-md-2">' + student.level + '</div>' +
       '<div class="col-md-2"><span class="' + student.img + '" aria-hidden="true"></span></div>' +
       '<div class="btn btn-danger btn-xs dash-stu-delete">Delete</div>' +
       '</div>'
@@ -35,7 +34,7 @@ var deleteStudentById = function() {
   var stuId = student.id.split("-")[1]
   return $.ajax({
     method: 'DELETE',
-    url: 'api/v1/teachers/students/' + stuId
+    url: '/api/v1/teachers/students/' + stuId
   })
   .done(getAllStudents)
   .fail(onFail);
