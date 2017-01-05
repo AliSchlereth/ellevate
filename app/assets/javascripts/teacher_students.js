@@ -1,4 +1,5 @@
 var onGetStudents = function(data) {
+  $('#tch-dash-students').html('');
   for (var i = 0; i < data.length; i++) {
     var student = data[i];
     $('#tch-dash-students').append(
@@ -32,8 +33,12 @@ var getAllStudents = function() {
 var deleteStudentById = function() {
   var student = $(this).parents('div.dash-student')[0];
   var stuId = student.id.split("-")[1]
-  debugger;
-  // var stuId = $(this).parents('div.dash-student')[0].id.split("-")[1]
+  return $.ajax({
+    method: 'DELETE',
+    url: 'api/v1/teachers/students/' + stuId
+  })
+  .done(getAllStudents)
+  .fail(onFail);
 }
 
 getAllStudents();

@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       get 'teachers/students', to: "teachers/students#index"
+      delete 'teachers/students/:id', to: "teachers/students#destroy"
     end
   end
 end
