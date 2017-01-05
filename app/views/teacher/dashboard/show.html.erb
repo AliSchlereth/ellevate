@@ -10,7 +10,7 @@
         <div class="col-md-2"><%= student.name %></div>
         <div class="col-md-2"><%= student.language %></div>
         <div class="col-md-2"><%= student.level %></div>
-        <div class="col-md-2"><%= student.pass_img.img %></div>
+        <div class="col-md-2"><%= image_tag(student.pass_img.img) %></div>
       </div>
     <% end  %>
   </div>
