@@ -8,4 +8,10 @@ Rails.application.routes.draw do
   namespace :teacher do
     get '/dashboard', to: "dashboard#show"
   end
+
+  namespace :api do
+    namespace :v1 do
+      get 'teachers/:id/students', to: "teachers/students#index"
+    end
+  end
 end
