@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      get 'teachers/:id/students', to: "teachers/students#index"
+      get 'teachers/students', to: "teachers/students#index"
     end
   end
 end
