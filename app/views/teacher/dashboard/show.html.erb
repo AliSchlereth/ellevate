@@ -5,6 +5,18 @@
   <div class="panel dash-create-stu">
     <form class="form-inline">
       <div class="form-group">
+        <!-- Name:<input type="text" name="name" />
+        Username:<input type="text" name="username" />
+        Language:<input type="text" name="language" />
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Password</a>
+        <ul class="dropdown-menu">
+          <% @pass_imgs.each do |pass_img| %>
+            <li><span class="<%= pass_img.img %>"></span></li>
+          <% end %>
+        </ul>
+        <input type="submit" name="submit-student" /> -->
+
+
         <%= form_for @student, class:"form-group" do |f|%>
           <%= f.label :name %>
           <%= f.text_field :name, class:"form-control" %>
