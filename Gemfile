@@ -24,6 +24,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'figaro'
 gem 'omniauth-google-oauth2'
 gem 'font-awesome-sass'
+gem 'active_model_serializers', '~> 0.10.0'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
