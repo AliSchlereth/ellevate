@@ -7,7 +7,7 @@ var onGetStudents = function(data) {
       '<div class="col-md-2">' + student.language + '</div>' +
       '<div class="col-md-2">' + student.level + '</div>' +
       '<div class="col-md-2">' + student.level + '</div>' +
-      '<div class="col-md-2">' + student.img + '</div>'
+      '<div class="col-md-2"><span class="' + student.img + '" aria-hidden="true"></span></div>'
     );
   }
 }
