@@ -1,8 +1,17 @@
-<%= current_user.first_name %> <%= current_user.last_name %>
-<% current_user.students.each do |student| %>
-  <%= student.username %>
-  <%= student.name %>
-  <%= student.language %>
-  <%= student.level %>
-  <%= student.pass_img.img %>
-  <% end  %>
+<div class="container-fluid">
+  <div class="panel">
+    <h3><%= current_user.first_name %> <%= current_user.last_name %></h3>
+  </div>
+  <div class="panel">
+    <h3>Students:</h3>
+    <% current_user.students.each do |student| %>
+      <div class="row">
+        <div class="col-md-2"><%= student.username %></div>
+        <div class="col-md-2"><%= student.name %></div>
+        <div class="col-md-2"><%= student.language %></div>
+        <div class="col-md-2"><%= student.level %></div>
+        <div class="col-md-2"><%= student.pass_img.img %></div>
+      </div>
+    <% end  %>
+  </div>
+</div>
