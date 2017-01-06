@@ -43,15 +43,15 @@ var deleteStudentById = function() {
 var createStudentById = function() {
   var stuName = $('input.stu-name').val();
   var stuUsername = $('input.stu-username').val();
-  var stuLevel = $('input.stu-language').val();
-  var stulanguage = $('select.stu-level').val();
+  var stulanguage = $('input.stu-language').val();
+  var stuLevel = $('select.stu-level').val();
   var stuPassImg = $('select.stu-pass-img').val();
   return $.ajax({
     method: 'POST',
     url: '/api/v1/teachers/students',
     data: {student: {'name': stuName, 'username': stuUsername, 'level': stuLevel, 'language': stulanguage, 'pass_img_id': stuPassImg}}
   })
-  .done(onGetStudents)
+  .done(getAllStudents)
   .fail(onFail);
 }
 
