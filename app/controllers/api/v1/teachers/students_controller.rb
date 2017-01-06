@@ -5,6 +5,10 @@ class Api::V1::Teachers::StudentsController < ApplicationController
     render json: students
   end
 
+  def create
+    binding.pry
+  end
+
   def destroy
     student = current_user.students.find(params[:id])
     student.destroy

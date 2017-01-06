@@ -35,4 +35,18 @@ describe "student requests by teacher" do
       expect(student['id']).to eq(@student1.id)
     end
   end
+
+  context "create student by teacher" do
+    it "creates a student on current_user" do
+      headers = {"CONTENT-TYPE" => "application/json"}
+      params = {student: {name: "Create Name", username: "Create Username", language: "Spanish", level: 3, pass_img_id: 5}}.to_json
+
+      post "/api/v1/teachers/students", params, headers
+
+      student = JSON.parse(response.body)
+
+      expect(response).to be_success
+      expect(student['teacher_id']).to eq(@teacher.id)
+    end
+  end
 end

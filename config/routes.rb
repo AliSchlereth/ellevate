@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       get 'teachers/students', to: "teachers/students#index"
       delete 'teachers/students/:id', to: "teachers/students#destroy"
+      post 'teachers/students', to: "teachers/students#create"
     end
   end
 end
