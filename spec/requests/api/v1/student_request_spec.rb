@@ -39,7 +39,7 @@ describe "student requests by teacher" do
   context "create student by teacher" do
     it "creates a student on current_user" do
       headers = {"CONTENT-TYPE" => "application/json"}
-      params = {student: {name: "Create Name", username: "Create Username", language: "Spanish", level: 3, pass_img_id: 5}}.to_json
+      params = {student: {name: "Create Name", username: "Create Username", language: "Spanish", level: 3, pass_img_id: @student1.pass_img_id}}.to_json
 
       post "/api/v1/teachers/students", params, headers
 

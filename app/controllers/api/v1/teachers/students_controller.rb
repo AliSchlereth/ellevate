@@ -6,7 +6,12 @@ class Api::V1::Teachers::StudentsController < ApplicationController
   end
 
   def create
-    binding.pry
+    student = current_user.students.new(student_params)
+    if student.save
+      render json: student
+    else
+      render json: {message: "Your student was not created"}, status: 404
+    end
   end
 
   def destroy
@@ -14,5 +19,10 @@ class Api::V1::Teachers::StudentsController < ApplicationController
     student.destroy
     render json: student
   end
+
+  private
+    def student_params
+      params.require(:student).permit(:name, :username, :level, :language, :pass_img_id)
+    end
 
 end
