@@ -17,18 +17,18 @@
         <input type="submit" name="submit-student" /> -->
 
 
-        <%= form_for @student, class:"form-group" do |f|%>
+        <%= form_for @student, remote: true, class:"form-group" do |f|%>
           <%= f.label :name %>
-          <%= f.text_field :name, class:"form-control" %>
+          <%= f.text_field :name, class:"form-control stu-name" %>
           <%= f.label :username %>
-          <%= f.text_field :username, class:"form-control"%>
+          <%= f.text_field :username, class:"form-control stu-username"%>
           <%= f.label :language %>
-          <%= f.text_field :language, class:"form-control" %>
+          <%= f.text_field :language, class:"form-control stu-language" %>
           <%= f.label :level %>
-          <%= f.select(:level, [[1, 1], [2, 2], [3, 3]]) %>
+          <%= f.select(:level, [[1, 1], [2, 2], [3, 3]], {}, { :class => 'stu-level' }) %>
           <%= f.label "password image" %>
-          <%= f.collection_select(:pass_img_id, @pass_imgs, :id, :img, include_blank: true) %>
-          <p><button type="submit" class="btn btn-default">Add Student</button></p>
+          <%= f.collection_select(:pass_img_id, @pass_imgs, :id, :img, {include_blank: true}, {class:'stu-pass-img'}) %>
+          <p><button type="submit" class="btn btn-default dash-stu-create">Add Student</button></p>
         <% end  %>
       </div>
     </form>
