@@ -19,15 +19,15 @@
 
         <%= form_for @student, remote: true, class:"form-group" do |f|%>
           <%= f.label :name %>
-          <%= f.text_field :name, class:"form-control stu-name" %>
+          <%= f.text_field :name, class:"form-control new-stu-name" %>
           <%= f.label :username %>
-          <%= f.text_field :username, class:"form-control stu-username"%>
+          <%= f.text_field :username, class:"form-control new-stu-username"%>
           <%= f.label :language %>
-          <%= f.text_field :language, class:"form-control stu-language" %>
+          <%= f.text_field :language, class:"form-control new-stu-language" %>
           <%= f.label :level %>
-          <%= f.select(:level, [[1, 1], [2, 2], [3, 3]], {}, { :class => 'stu-level' }) %>
+          <%= f.select(:level, [[1, 1], [2, 2], [3, 3]], {}, { :class => 'new-stu-level' }) %>
           <%= f.label "password image" %>
-          <%= f.collection_select(:pass_img_id, @pass_imgs, :id, :img, {include_blank: true}, {class:'stu-pass-img'}) %>
+          <%= f.collection_select(:pass_img_id, @pass_imgs, :id, :img, {include_blank: true}, {class:'new-stu-pass-img'}) %>
           <p><button type="submit" class="btn btn-default dash-stu-create">Add Student</button></p>
         <% end  %>
       </div>
