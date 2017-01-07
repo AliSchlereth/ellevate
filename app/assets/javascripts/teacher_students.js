@@ -51,7 +51,12 @@ var createStudentById = function() {
     url: '/api/v1/teachers/students',
     data: {student: {'name': stuName, 'username': stuUsername, 'level': stuLevel, 'language': stulanguage, 'pass_img_id': stuPassImg}}
   })
-  .done(getAllStudents)
+  .done(function() {
+    $('input').val('');
+    $('select.stu-level').val('1');
+    $('select.stu-pass-img').val('');
+    getAllStudents();
+  })
   .fail(onFail);
 }
 
