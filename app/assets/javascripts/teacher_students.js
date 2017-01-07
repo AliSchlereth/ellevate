@@ -68,8 +68,7 @@ var editStudentField = function(stuInput) {
     currentClass + '" value="' + currentValue + '"/>'
 }
 
-var updateStudentById = function() {
-  var student = $(this).parents('.dash-student');
+var convertToInput = function(student) {
   var stuName = student.find('.stu-name')[0];
   var stuLanguage = student.find('.stu-language')[0];
   var stuUsername = student.find('.stu-username')[0];
@@ -77,6 +76,9 @@ var updateStudentById = function() {
   for (var i = 0; i < stuInfo.length; i++) {
     editStudentField(stuInfo[i]);
   }
+}
+
+var convertLevelToSelect = function(student) {
   var stuLevel = student.find('.stu-level')[0];
   var currentClass = stuLevel.classList[0];
   var currentLevel = stuLevel.innerHTML;
@@ -87,22 +89,30 @@ var updateStudentById = function() {
   } else {
     stuLevel.outerHTML = '<select> <option selected value="one">1</option> <option value="two">2</option> <option value="three">3</option> </select>';
   }
+}
+
+var convertPassImgToSelect = function(student) {
   var stuPassImg = student.find('.stu-pass-img')[0];
   var currentClass = stuPassImg.classList[0];
   var currentPassImg = stuPassImg.innerHTML;
-  stuPassImg.outerHTML = '<select>' +
-    '<option value="glyphicon glyphicon-book">book</option>' +
-    '<option value="glyphicon glyphicon-bell">bell</option>' +
-    '<option value="glyphicon glyphicon-tree-deciduous">tree</option>' +
-    '<option value="glyphicon glyphicon-gift">gift</option>' +
-    '<option value="glyphicon glyphicon-heart">heart</option>' +
-    '<option value="glyphicon glyphicon-home">home</option>' +
-    '<option value="glyphicon glyphicon-apple">apple</option>' +
-    '<option value="glyphicon glyphicon-lock">lock</option>' +
-    '<option value="glyphicon glyphicon-asterisk">star</option>' +
-    '</select>';
+  var passImgClass = $(currentPassImg)[0].classList[1].split('-')[1]
+  var passImgs = ['book', 'bell', 'tree-deciduous', 'gift', 'heart', 'home', 'apple', 'lock', 'asterisk']
+  var passImgDropdownHTML = '<select>' +
+    '<option value="glyphicon glyphicon-' + passImgClass + '">' + passImgClass + '</option>'
+    for (var i = 0; i < passImgs.length; i++) {
+      if (passImgs[i] !== passImgClass) {
+        passImgDropdownHTML = passImgDropdownHTML + '<option value="glyphicon glyphicon-' + passImgs[i] + '">' + passImgs[i] + '</option>'
+      }
+    }
+    stuPassImg.outerHTML = passImgDropdownHTML + '</select>';
+}
 
 
+var updateStudentById = function() {
+  var student = $(this).parents('.dash-student');
+  convertToInput(student);
+  convertLevelToSelect(student);
+  convertPassImgToSelect(student);
 }
 
 getAllStudents();
