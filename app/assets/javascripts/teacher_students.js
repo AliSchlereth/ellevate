@@ -87,8 +87,20 @@ var updateStudentById = function() {
   } else {
     stuLevel.outerHTML = '<select> <option selected value="one">1</option> <option value="two">2</option> <option value="three">3</option> </select>';
   }
-  
-
+  var stuPassImg = student.find('.stu-pass-img')[0];
+  var currentClass = stuPassImg.classList[0];
+  var currentPassImg = stuPassImg.innerHTML;
+  stuPassImg.outerHTML = '<select>' +
+    '<option value="glyphicon glyphicon-book">book</option>' +
+    '<option value="glyphicon glyphicon-bell">bell</option>' +
+    '<option value="glyphicon glyphicon-tree-deciduous">tree</option>' +
+    '<option value="glyphicon glyphicon-gift">gift</option>' +
+    '<option value="glyphicon glyphicon-heart">heart</option>' +
+    '<option value="glyphicon glyphicon-home">home</option>' +
+    '<option value="glyphicon glyphicon-apple">apple</option>' +
+    '<option value="glyphicon glyphicon-lock">lock</option>' +
+    '<option value="glyphicon glyphicon-asterisk">star</option>' +
+    '</select>';
 
 
 }
