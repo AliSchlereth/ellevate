@@ -63,8 +63,8 @@ var createStudentById = function() {
 
 var editStudentField = function(stuInput) {
   var currentValue = stuInput.innerHTML;
-  var currentClass = stuInput.classList[0];
-  stuInput.outerHTML = '<input class="col-md-2' +
+  var currentClass = stuInput.classList[1];
+  stuInput.outerHTML = '<input class="col-md-2 ' +
     currentClass + '" value="' + currentValue + '"/>'
 }
 
@@ -72,7 +72,7 @@ var convertToInput = function(student) {
   var stuName = student.find('.stu-name')[0];
   var stuLanguage = student.find('.stu-language')[0];
   var stuUsername = student.find('.stu-username')[0];
-  var stuInfo = [stuName, stuLanguage, stuUsername]
+  var stuInfo = [stuName, stuLanguage, stuUsername];
   for (var i = 0; i < stuInfo.length; i++) {
     editStudentField(stuInfo[i]);
   }
@@ -83,21 +83,22 @@ var convertLevelToSelect = function(student) {
   var currentClass = stuLevel.classList[0];
   var currentLevel = stuLevel.innerHTML;
   if (currentLevel === '3') {
-    stuLevel.outerHTML = '<select> <option value="one">1</option> <option value="two">2</option> <option selected value="three">3</option> </select>';
+    stuLevel.outerHTML = '<select class="col-md-2 stu-level"> <option value="1">1</option> <option value="2">2</option> <option selected value="3">3</option> </select>';
   } else if (currentLevel === '2') {
-    stuLevel.outerHTML = '<select> <option value="one">1</option> <option selected value="two">2</option> <option value="three">3</option> </select>';
+    stuLevel.outerHTML = '<select class="col-md-2 stu-level"> <option value="1">1</option> <option selected value="2">2</option> <option value="3">3</option> </select>';
   } else {
-    stuLevel.outerHTML = '<select> <option selected value="one">1</option> <option value="two">2</option> <option value="three">3</option> </select>';
+    stuLevel.outerHTML = '<select class="col-md-2 stu-level"> <option selected value="1">1</option> <option value="2">2</option> <option value="3">3</option> </select>';
   }
 }
 
 var convertPassImgToSelect = function(student) {
-  var stuPassImg = student.find('.stu-pass-img')[0];
-  var currentClass = stuPassImg.classList[0];
-  var currentPassImg = stuPassImg.innerHTML;
-  var passImgClass = $(currentPassImg)[0].classList[1].split('-')[1]
-  var passImgs = ['book', 'bell', 'tree-deciduous', 'gift', 'heart', 'home', 'apple', 'lock', 'asterisk']
-  var passImgDropdownHTML = '<select>' +
+  var stuPassImg      = student.find('.stu-pass-img')[0];
+  var currentClass    = stuPassImg.classList[0];
+  var currentPassImg  = stuPassImg.innerHTML;
+  var passImgClass    = $(currentPassImg)[0].classList[1].split('-')[1];
+  var passImgs        = ['book', 'bell', 'tree-deciduous', 'gift', 'heart', 'home', 'apple', 'lock', 'asterisk'];
+
+  var passImgDropdownHTML = '<select class="col-md-2 stu-pass-img">' +
     '<option value="glyphicon glyphicon-' + passImgClass + '">' + passImgClass + '</option>'
     for (var i = 0; i < passImgs.length; i++) {
       if (passImgs[i] !== passImgClass) {
@@ -113,6 +114,12 @@ var updateStudentById = function() {
   convertToInput(student);
   convertLevelToSelect(student);
   convertPassImgToSelect(student);
+  var stuName     = student.find('input.stu-name').val();
+  var stuUsername = student.find('input.stu-username').val();
+  var stuLanguage = student.find('input.stu-language').val();
+  var stuLevel    = student.find('select.stu-level').val();
+  var stuPassImg  = student.find('select.stu-pass-img').val();
+
 }
 
 getAllStudents();
