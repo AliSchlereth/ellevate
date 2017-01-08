@@ -63,10 +63,10 @@ describe "student requests by teacher" do
       expect(student['teacher_id']).to eq(@teacher.id)
       expect(student['id']).to eq(@student2.id)
       expect(student['name']).to eq("Update Name")
-      expect(student['usernamename']).to eq("Update Username")
+      expect(student['username']).to eq("Update Username")
       expect(student['language']).to eq("Spanish")
-      expect(student['level']).to eq("3")
-      expect(student['pass_img_id']).to eq("#{@student1.pass_img_id}")
+      expect(student['level']).to eq(3)
+      expect(student['img']).to eq("#{@student1.pass_img.img}")
     end
   end
 

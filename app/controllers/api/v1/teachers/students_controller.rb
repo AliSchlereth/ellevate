@@ -14,6 +14,18 @@ class Api::V1::Teachers::StudentsController < ApplicationController
     end
   end
 
+  def update
+    student = current_user.students.find(params[:id])
+    student.update(student_params)
+    pass_img = PassImg.find_by(img: params[:student][:pass_img])
+    student.update(pass_img: pass_img)
+    if student.save
+      render json: student
+    else
+      render json: {message: "Unable to update student"}, status: 400
+    end
+  end
+
   def destroy
     student = current_user.students.find(params[:id])
     student.destroy
