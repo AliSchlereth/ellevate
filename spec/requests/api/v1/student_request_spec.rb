@@ -51,16 +51,22 @@ describe "student requests by teacher" do
   end
 
   context "update student by student id" do
-    it "creates a student on current_user" do
+    it "update a student by id on current_user" do
       headers = {"CONTENT-TYPE" => "application/json"}
-      params = {student: {name: "Update Name", username: "Update Username", language: "Spanish", level: 3, pass_img_id: @student1.pass_img_id}}.to_json
+      params = {student: {name: "Update Name", username: "Update Username", language: "Spanish", level: 3, pass_img: @student1.pass_img.img}}.to_json
 
-      post "/api/v1/teachers/students", params, headers
+      patch "/api/v1/teachers/students/#{@student2.id}", params, headers
 
       student = JSON.parse(response.body)
 
       expect(response).to be_success
       expect(student['teacher_id']).to eq(@teacher.id)
+      expect(student['id']).to eq(@student2.id)
+      expect(student['name']).to eq("Update Name")
+      expect(student['usernamename']).to eq("Update Username")
+      expect(student['language']).to eq("Spanish")
+      expect(student['level']).to eq("3")
+      expect(student['pass_img_id']).to eq("#{@student1.pass_img_id}")
     end
   end
 
