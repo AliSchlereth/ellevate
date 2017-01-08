@@ -44,13 +44,13 @@ var deleteStudentById = function() {
 var createStudentById = function() {
   var stuName = $('input.new-stu-name').val();
   var stuUsername = $('input.new-stu-username').val();
-  var stulanguage = $('input.new-stu-language').val();
+  var stuLanguage = $('input.new-stu-language').val();
   var stuLevel = $('select.new-stu-level').val();
   var stuPassImg = $('select.new-stu-pass-img').val();
   return $.ajax({
     method: 'POST',
     url: '/api/v1/teachers/students',
-    data: {student: {'name': stuName, 'username': stuUsername, 'level': stuLevel, 'language': stulanguage, 'pass_img_id': stuPassImg}}
+    data: {student: {'name': stuName, 'username': stuUsername, 'level': stuLevel, 'language': stuLanguage, 'pass_img_id': stuPassImg}}
   })
   .done(function() {
     $('input').val('');
@@ -133,9 +133,9 @@ var updateStudentById = function() {
   $.ajax({
     method: 'PATCH',
     url: '/api/v1/teachers/students/' + stuId,
-    data: {student: {'name': stuName, 'username': stuUsername, 'language': stulanguage, 'level': stuLevel, 'pass_img_id': stuPassImg}}
+    data: {student: {'name': stuName, 'username': stuUsername, 'language': stuLanguage, 'level': stuLevel, 'pass_img': stuPassImg}}
   })
-  .done(onGetStudents)
+  .done(getAllStudents)
   .fail(onFail);
 }
 
