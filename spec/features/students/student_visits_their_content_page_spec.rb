@@ -5,6 +5,7 @@ describe "student visits their content page" do
     student = create(:student)
     visit student_path(student)
 
-    expect(page).to have_css("img[src*='pixabay']")
+    expect(page).to have_css("img[src*='pixabay.com/static']")
+    expect(page).to have_css("img[src*='pixabay.com/get']")
   end
 end

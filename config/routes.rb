@@ -7,7 +7,6 @@ Rails.application.routes.draw do
 
   namespace :teacher do
     get '/dashboard', to: "dashboard#show"
-
   end
 
   namespace :api do
@@ -16,6 +15,7 @@ Rails.application.routes.draw do
       delete 'teachers/students/:id', to: "teachers/students#destroy"
       post 'teachers/students', to: "teachers/students#create"
       patch 'teachers/students/:id', to: "teachers/students#update"
+      get 'image', to: "images#show"
     end
   end
 end
