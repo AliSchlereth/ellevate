@@ -1,6 +1,6 @@
 class Teacher < ApplicationRecord
   has_many :students
-  
+
   validates :provider, presence: true
   validates :uid, presence: true
   validates :email, presence: true
@@ -10,7 +10,7 @@ class Teacher < ApplicationRecord
 
 
   def self.update_or_create(auth)
-    teacher = Teacher.find_by(uid: auth[:id]) || Teacher.new
+    teacher = Teacher.find_by(uid: auth[:uid]) || Teacher.new
     teacher.attributes = {
       provider: auth[:provider],
       uid: auth[:uid],
