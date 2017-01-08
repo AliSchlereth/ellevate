@@ -119,20 +119,33 @@ var editStudentById = function() {
   convertLevelToSelect(student);
   convertPassImgToSelect(student);
   convertEditButtonToUpdate(student);
-  // var stuName     = student.find('input.stu-name').val();
-  // var stuUsername = student.find('input.stu-username').val();
-  // var stuLanguage = student.find('input.stu-language').val();
-  // var stuLevel    = student.find('select.stu-level').val();
-  // var stuPassImg  = student.find('select.stu-pass-img').val();
+  updateStudents();
 }
 
-
+var updateStudentById = function() {
+  var student = $(this).parents('.dash-student');
+  var stuId = student[0].id.split("-")[1]
+  var stuName     = student.find('input.stu-name').val();
+  var stuUsername = student.find('input.stu-username').val();
+  var stuLanguage = student.find('input.stu-language').val();
+  var stuLevel    = student.find('select.stu-level').val();
+  var stuPassImg  = student.find('select.stu-pass-img').val();
+  $.ajax({
+    method: 'PATCH',
+    url: '/api/v1/teachers/students/' + stuId,
+    data: {student: {'name': stuName, 'username': stuUsername, 'language': stulanguage, 'level': stuLevel, 'pass_img_id': stuPassImg}}
+  })
+  .done(onGetStudents)
+  .fail(onFail);
+}
 
 getAllStudents();
 
 var manageStudents = function() {
   $('.dash-stu-delete').on('click', deleteStudentById);
   $('.dash-stu-edit').on('click', editStudentById);
+}
+var updateStudents = function() {
   $('.dash-stu-update').on('click', updateStudentById);
 }
 
