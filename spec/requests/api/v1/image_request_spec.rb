@@ -8,7 +8,7 @@ describe "image requests" do
       image = JSON.parse(response.body)
 
       expect(response).to be_success
-      expect(image).to respond_t("image_url")
+      expect(image).to have_key("image_url")
     end
   end
 end
