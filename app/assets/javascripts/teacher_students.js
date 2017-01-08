@@ -10,7 +10,7 @@ var onGetStudents = function(data) {
       '<div class="col-md-2 stu-level">' + student.level + '</div>' +
       '<div class="col-md-2 stu-pass-img"><span class="' + student.img + '" aria-hidden="true"></span></div>' +
       '<div class="btn btn-danger btn-xs dash-stu-delete">Delete</div>' +
-      '<div class="btn btn-warning btn-xs dash-stu-update">Edit</div>' +
+      '<div class="btn btn-warning btn-xs dash-stu-edit">Edit</div>' +
       '</div>'
     );
   }
@@ -108,24 +108,31 @@ var convertPassImgToSelect = function(student) {
     stuPassImg.outerHTML = passImgDropdownHTML + '</select>';
 }
 
+var convertEditButtonToUpdate = function(student) {
+  var stuEditButton = student.find('.dash-stu-edit')[0];
+  stuEditButton.outerHTML = '<div class="btn btn-success btn-xs dash-stu-update">Update</div>'
+ }
 
-var updateStudentById = function() {
+var editStudentById = function() {
   var student = $(this).parents('.dash-student');
   convertToInput(student);
   convertLevelToSelect(student);
   convertPassImgToSelect(student);
-  var stuName     = student.find('input.stu-name').val();
-  var stuUsername = student.find('input.stu-username').val();
-  var stuLanguage = student.find('input.stu-language').val();
-  var stuLevel    = student.find('select.stu-level').val();
-  var stuPassImg  = student.find('select.stu-pass-img').val();
-
+  convertEditButtonToUpdate(student);
+  // var stuName     = student.find('input.stu-name').val();
+  // var stuUsername = student.find('input.stu-username').val();
+  // var stuLanguage = student.find('input.stu-language').val();
+  // var stuLevel    = student.find('select.stu-level').val();
+  // var stuPassImg  = student.find('select.stu-pass-img').val();
 }
+
+
 
 getAllStudents();
 
 var manageStudents = function() {
   $('.dash-stu-delete').on('click', deleteStudentById);
+  $('.dash-stu-edit').on('click', editStudentById);
   $('.dash-stu-update').on('click', updateStudentById);
 }
 
