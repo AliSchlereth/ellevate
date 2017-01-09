@@ -3,7 +3,7 @@ var onGetStudents = function(data) {
   for (var i = 0; i < data.length; i++) {
     var student = data[i];
     $('#tch-dash-students').append(
-      '<div class="dash-student" id="student-' + student.id + '">' +
+      '<div class="dash-student row" id="student-' + student.id + '">' +
       '<div class="col-md-2 stu-username">' + student.username + '</div>' +
       '<div class="col-md-2 stu-name">' + student.name + '</div>' +
       '<div class="col-md-2 stu-language">' + student.language + '</div>' +
