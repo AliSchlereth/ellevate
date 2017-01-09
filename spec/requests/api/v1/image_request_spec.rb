@@ -6,7 +6,6 @@ describe "image requests" do
       get "/api/v1/image"
 
       image = JSON.parse(response.body)
-      sleep(5)
       
       expect(response).to be_success
       expect(image).to have_key("image_url")
