@@ -12,7 +12,8 @@ var onGetContentImage = function(data) {
 }
 
 var onGetTranslation = function(data) {
-  debugger;
+  var translatedMessage = data['message'];
+  $('textarea.translated-sentence')[0].innerHTML = translatedMessage
 }
 
 var getContentImage = function() {
