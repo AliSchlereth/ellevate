@@ -8,11 +8,9 @@ class Translate
 
   def self.translate(language, message)
     language_code = convert_to_language_code(language.capitalize)
-    translation_info = GoogleTranslateService.translate(language_code, message)
-    translations = translation_info[:data][:translations]
-    messages = translations.map do |translation_info|
-      Translate.new(translation_info)
-    end
+    translation_data = GoogleTranslateService.translate(language_code, message)
+    translation_info = translation_data[:data][:translations][0]
+    Translate.new(translation_info)
   end
 
   private
