@@ -16,6 +16,7 @@ Rails.application.routes.draw do
       post 'teachers/students', to: "teachers/students#create"
       patch 'teachers/students/:id', to: "teachers/students#update"
       get 'image', to: "images#show"
+      post 'translation', to: "translations#show"
     end
   end
 end

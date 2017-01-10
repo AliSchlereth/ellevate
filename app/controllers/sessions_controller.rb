@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  protect_from_forgery with: :null_session
+  protect_from_forgery with: :exception
 
   def create
     user = Teacher.update_or_create(env["omniauth.auth"])

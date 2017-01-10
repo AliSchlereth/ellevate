@@ -5,7 +5,7 @@ FactoryGirl.define do
     sequence :level, (%w[1 2 3]).cycle do |level|
       level
     end
-    language "MyString"
+    language "Spanish"
     teacher
     pass_img
   end

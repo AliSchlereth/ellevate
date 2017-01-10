@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 PassImg.create(img: 'glyphicon glyphicon-book')
 PassImg.create(img: 'glyphicon glyphicon-bell')
-PassImg.create(img: 'glyphicon glyphicon-tree-deciduous')
+PassImg.create(img: 'glyphicon glyphicon-fire')
 PassImg.create(img: 'glyphicon glyphicon-gift')
 PassImg.create(img: 'glyphicon glyphicon-heart')
 PassImg.create(img: 'glyphicon glyphicon-home')

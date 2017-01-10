@@ -9,7 +9,11 @@ var onGetContentImage = function(data) {
     '<img src="' + imageUrl + '" class="content-img">' +
     '<h3>' + imageTag + '</h3>'
   );
+}
 
+var onGetTranslation = function(data) {
+  var translatedMessage = data['message'];
+  $('textarea.translated-sentence')[0].innerHTML = translatedMessage
 }
 
 var getContentImage = function() {
@@ -21,4 +25,20 @@ var getContentImage = function() {
   .fail(onFail);
 }
 
+var translateSentence = function() {
+  var inputMessage = $('textarea.input-sentence').val();
+  return $.ajax({
+    method: 'POST',
+    url: '/api/v1/translation',
+    data: {translation: {'message': inputMessage}}
+  })
+  .done(onGetTranslation)
+  .fail(onFail);
+}
+
 getContentImage();
+
+$(document).ready(function(){
+  $('.dash-stu-create').on('click', createStudentById);
+  $('.submit-sentence').on('click', translateSentence);
+})

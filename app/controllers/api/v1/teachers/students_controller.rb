@@ -1,4 +1,5 @@
 class Api::V1::Teachers::StudentsController < ApplicationController
+  protect_from_forgery with: :null_session
 
   def index
     students = current_user.students.order(:level)
