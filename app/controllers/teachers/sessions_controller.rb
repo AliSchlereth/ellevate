@@ -1,4 +1,4 @@
-class SessionsController < ApplicationController
+class Teachers::SessionsController < ApplicationController
   protect_from_forgery with: :exception
 
   def create

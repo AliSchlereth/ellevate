@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get 'auth/google', as: 'login'
-  get 'auth/:provider/callback', to: "sessions#create"
-  get 'logout', to: "sessions#destroy"
+  get 'auth/google', as: 'teacher_login'
+  get 'auth/:provider/callback', to: "teachers/sessions#create"
+  get 'teacher_logout', to: "teachers/sessions#destroy"
   root "welcome#index"
   resources :students, only: [:show, :index]
 
