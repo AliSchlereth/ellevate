@@ -17,9 +17,7 @@ describe "user logs in as a student" do
     fill_in "Teacher", with: teacher.last_name
     fill_in "Username", with: student.username
     page.first(".glyphicon-book").click
-    # within('.book') do
-    #   click_on
-    # end
+
     expect(page).to have_content("Type your sentence below:")
     expect(page).to have_content("#{student.name}")
   end

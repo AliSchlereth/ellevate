@@ -143,7 +143,6 @@ getAllStudents();
 
 var manageStudents = function() {
   $('.dash-stu-delete').on('click', deleteStudentById);
-  $('.dash-stu-edit').on('click', editStudentById);
 }
 
 var updateStudents = function() {
@@ -152,12 +151,8 @@ var updateStudents = function() {
 
 
 $(document).ready(function(){
-  // var createStudents = function() {
     $('.dash-stu-create').on('click', createStudentById);
-  // }
-
-  $('form').on('submit', function(event){
-    event.preventDefault();
-  });
+    $('#tch-dash-students').on('click', '.dash-stu-edit', editStudentById )
+    // $('#tch-dash-')
 
 })
