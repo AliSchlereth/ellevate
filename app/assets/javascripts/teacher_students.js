@@ -145,6 +145,7 @@ var manageStudents = function() {
   $('.dash-stu-delete').on('click', deleteStudentById);
   $('.dash-stu-edit').on('click', editStudentById);
 }
+
 var updateStudents = function() {
   $('.dash-stu-update').on('click', updateStudentById);
 }

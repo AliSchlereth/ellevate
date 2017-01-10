@@ -2,7 +2,8 @@
   // background-color: #1273e2;
   // background-color: #8DCDC1; light blue
   // background-color: #D3E397;
-  background: linear-gradient(#D3E397, #98B861);
+  // background: linear-gradient(#D3E397, #98B861);
+  background: linear-gradient(#D3E397, #B0BD80);
   border-radius: 0px;
   border-color: darkgrey;
   box-shadow: 0px 1px 5px 0px rgba(50, 50, 50, 0.43);
@@ -14,11 +15,15 @@
   // http://www.colorcombos.com/color-schemes/137/ColorCombo137.html
   // color: #EB6E44 !important;
   // color: purple !important;
-  color: #FFF5C3 !important;
+  // color: #6298B7 !important;
+  // color: #5D7291 !important;
+  color: #45556D !important;
+
   font-weight: bold;
-  text-shadow: 1px 1px grey;
+  text-shadow: 1px 0px lightgrey;
+  font-size: 2em;
   float: left;
-  margin-left: 45%;
+  margin-left: 43%;
   margin-right: 35%;
   // padding-top: 20px;
 }

@@ -8,7 +8,7 @@ class Translate
 
   def self.translate(language, message)
     language_code = convert_to_language_code(language.capitalize)
-    translation_data = GoogleTranslateService.translate(language_code, message)
+    translation_data = GoogleTranslateService.new.translate(language_code, message)
     translation_info = translation_data[:data][:translations][0]
     Translate.new(translation_info)
   end
