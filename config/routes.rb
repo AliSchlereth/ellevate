@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
+  root "welcome#index"
   get 'auth/google', as: 'teacher_login'
   get 'auth/:provider/callback', to: "teachers/sessions#create"
   get 'teacher_logout', to: "teachers/sessions#destroy"
-  root "welcome#index"
+  get 'students/login', to: "students/sessions#new", as: "student_login"
+  post 'students/login', to: "students/sessions#create"
   resources :students, only: [:show, :index]
 
   namespace :teacher do

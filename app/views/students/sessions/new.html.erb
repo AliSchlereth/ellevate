@@ -1,0 +1,18 @@
+<%#= form_for @student do |f|%>
+  <%#= f.label :teacher %>
+  <%#= f.text_field :teacher %>
+  <%#= f.label :username %>
+  <%#= f.text_field :username %>
+  <%# @pass_imgs.each do |pass_img| %>
+  <%# end  %>
+<%# end  %>
+
+<%= form_tag students_login_path, method: :post, class: "form-group" do %>
+  <%= label_tag :teacher %>
+  <%= text_field_tag :teacher, params[:teacher] %>
+  <%= label_tag :username %>
+  <%= text_field_tag :username %>
+  <% @pass_imgs.each do |pass_img| %>
+    <button type="submit" name="pass_img" class="btn btn-default <%=pass_img.img%>" value="<%=pass_img.img%>"></button>
+  <% end  %>
+<% end  %>

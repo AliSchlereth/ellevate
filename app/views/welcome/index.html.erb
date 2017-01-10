@@ -14,12 +14,12 @@
         <% if current_user %>
           <ul><%= link_to "Welcome #{current_user.first_name} #{current_user.last_name}", teacher_dashboard_path, class:"btn btn-default"%><ul>
         <% else %>
-          <p><%= link_to "Sign in with Google", teacher_login_path, class:"btn btn-default" %></ul>
+          <p><%= link_to "Sign in with Google", teacher_login_path, class:"btn btn-default" %></p>
         <% end %>
       </div>
       <div class="panel student-panel col-md-5">
         <h3>Students</h3>
-        <p><%#= link_to "Sign In", login_path, class:"btn btn-default"%></p>
+        <p><%= link_to "Sign In", student_login_path, class:"btn btn-default"%></p>
       </div>
 
     </div>
