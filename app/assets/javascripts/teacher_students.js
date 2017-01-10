@@ -14,7 +14,6 @@ var onGetStudents = function(data) {
       '</div>'
     );
   }
-  manageStudents();
 }
 
 var onFail = function(err) {
@@ -119,7 +118,6 @@ var editStudentById = function() {
   convertLevelToSelect(student);
   convertPassImgToSelect(student);
   convertEditButtonToUpdate(student);
-  updateStudents();
 }
 
 var updateStudentById = function() {
@@ -141,18 +139,9 @@ var updateStudentById = function() {
 
 getAllStudents();
 
-var manageStudents = function() {
-  $('.dash-stu-delete').on('click', deleteStudentById);
-}
-
-var updateStudents = function() {
-  $('.dash-stu-update').on('click', updateStudentById);
-}
-
-
 $(document).ready(function(){
     $('.dash-stu-create').on('click', createStudentById);
     $('#tch-dash-students').on('click', '.dash-stu-edit', editStudentById )
-    // $('#tch-dash-')
-
+    $('#tch-dash-students').on('click', '.dash-stu-delete', deleteStudentById)
+    $('#tch-dash-students').on('click', '.dash-stu-update', updateStudentById)
 })

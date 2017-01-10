@@ -1,14 +1,20 @@
-
-<%= form_tag({controller: "students/sessions", action: "create"}, method: :post, class: "form-group") do %>
-  <%= label_tag :teacher %>
-  <%= text_field_tag :teacher, params[:teacher] %>
-  <%= label_tag :username %>
-  <%= text_field_tag :username %>
-  <% @pass_imgs.each do |pass_img| %>
-    <%= radio_button_tag :pass_imgs, pass_img.img %>
-    <%= label_tag :pass_imgs.to_s.concat("_#{pass_img.img}").to_sym do %>
-      <span class="<%= pass_img.img %>"></span>
-    <% end %>
-  <% end  %>
-  <%= submit_tag "Sign In" %>
-<% end  %>
+<div class="panel col-md-4 sign-in-panel">
+  <h3>Student Sign In</h3>
+  <form >
+    <div class="form-group">
+      <%= form_tag({controller: "students/sessions", action: "create"}, method: :post, class: "form-group") do %>
+        <%= label_tag :teacher %>
+        <%= text_field_tag :teacher, params[:teacher], class:"form-control dash-input" %>
+        <%= label_tag :username %>
+        <%= text_field_tag :username, params[:userame], class:"form-control dash-input" %>
+        <% @pass_imgs.each do |pass_img| %>
+          <%= radio_button_tag :pass_imgs, pass_img.img %>
+          <%= label_tag :pass_imgs.to_s.concat("_#{pass_img.img}").to_sym do %>
+            <span class="<%= pass_img.img %>"></span>
+          <% end %>
+        <% end  %>
+        <p><%= submit_tag "Sign In", class:"btn btn-default" %></p>
+      <% end  %>
+    </div>
+  </div>
+</div>
