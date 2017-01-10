@@ -96,7 +96,7 @@ var convertPassImgToSelect = function(student) {
   var currentClass    = stuPassImg.classList[0];
   var currentPassImg  = stuPassImg.innerHTML;
   var passImgClass    = $(currentPassImg)[0].classList[1].split('-')[1];
-  var passImgs        = ['book', 'bell', 'tree-deciduous', 'gift', 'heart', 'home', 'apple', 'lock', 'asterisk'];
+  var passImgs        = ['book', 'bell', 'fire', 'gift', 'heart', 'home', 'apple', 'lock', 'asterisk'];
 
   var passImgDropdownHTML = '<select class="col-md-2 stu-pass-img">' +
     '<option value="glyphicon glyphicon-' + passImgClass + '">' + passImgClass + '</option>'
