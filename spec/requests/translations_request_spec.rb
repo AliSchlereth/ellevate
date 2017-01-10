@@ -7,7 +7,7 @@ describe "translation requests" do
       headers = {"CONTENT-TYPE" => "application/json"}
       params = {translation: {message: "This is a message."}}.to_json
 
-      post "/api/v1/translation", params, headers
+      post "/api/v1/translation", params: params, headers: headers
 
       message = JSON.parse(response.body)
 

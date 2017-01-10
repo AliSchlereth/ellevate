@@ -41,7 +41,7 @@ describe "student requests by teacher" do
       headers = {"CONTENT-TYPE" => "application/json"}
       params = {student: {name: "Create Name", username: "Create Username", language: "Spanish", level: 3, pass_img_id: @student1.pass_img_id}}.to_json
 
-      post "/api/v1/teachers/students", params, headers
+      post "/api/v1/teachers/students", params: params, headers: headers
 
       student = JSON.parse(response.body)
 
@@ -55,7 +55,7 @@ describe "student requests by teacher" do
       headers = {"CONTENT-TYPE" => "application/json"}
       params = {student: {name: "Update Name", username: "Update Username", language: "Spanish", level: 3, pass_img: @student1.pass_img.img}}.to_json
 
-      patch "/api/v1/teachers/students/#{@student2.id}", params, headers
+      patch "/api/v1/teachers/students/#{@student2.id}", params: params, headers: headers
 
       student = JSON.parse(response.body)
 
