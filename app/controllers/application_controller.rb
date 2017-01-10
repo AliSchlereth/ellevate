@@ -4,6 +4,9 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
 
   def current_user
-    @current_user ||= Teacher.find(session[:id]) if session[:id]
+    if session[:role] == "teacher"
+      @current_user ||= Teacher.find(session[:id]) if session[:id]
+    end
   end
+  
 end

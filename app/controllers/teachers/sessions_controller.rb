@@ -4,6 +4,7 @@ class Teachers::SessionsController < ApplicationController
   def create
     user = Teacher.update_or_create(env["omniauth.auth"])
     session[:id] = user.id
+    session[:role] = "teacher"
     redirect_to root_path
   end
 
