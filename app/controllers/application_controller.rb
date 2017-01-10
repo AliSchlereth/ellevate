@@ -6,7 +6,9 @@ class ApplicationController < ActionController::Base
   def current_user
     if session[:role] == "teacher"
       @current_user ||= Teacher.find(session[:id]) if session[:id]
+    elsif session[:role] == "student"
+      @current_user ||= Student.find(session[:id]) if session[:id]
     end
   end
-  
+
 end
