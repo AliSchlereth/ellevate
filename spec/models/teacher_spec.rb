@@ -136,4 +136,39 @@ RSpec.describe Teacher, type: :model do
     end
   end
 
+  context "check roles" do
+    context "teacher?" do
+      it "returns true" do
+        teacher = Teacher.create(
+          provider: "google",
+          uid: "12345678910",
+          email: "first@email.com",
+          first_name: "First",
+          last_name: "Last",
+          token: "abcdefg12345",
+          refresh_token: "12345abcdefg",
+          oauth_expires_at: DateTime.now
+        )
+        expect(teacher.teacher?).to be_truthy
+      end
+    end
+
+    context "student?" do
+      it "returns false" do
+        teacher = Teacher.create(
+          provider: "google",
+          uid: "12345678910",
+          email: "first@email.com",
+          first_name: "First",
+          last_name: "Last",
+          token: "abcdefg12345",
+          refresh_token: "12345abcdefg",
+          oauth_expires_at: DateTime.now
+        )
+        expect(teacher.student?).to be_falsey
+      end
+    end
+
+  end
+
 end
