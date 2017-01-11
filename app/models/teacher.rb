@@ -24,4 +24,12 @@ class Teacher < ApplicationRecord
     teacher.save!
     teacher
   end
+
+  def teacher?
+    true
+  end
+
+  def student?
+    false
+  end
 end

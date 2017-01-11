@@ -4,5 +4,5 @@ class Teacher::DashboardController < ApplicationController
     @student = Student.new
     @pass_imgs = PassImg.all
   end
-  
+
 end

@@ -107,4 +107,45 @@ RSpec.describe Student, type: :model do
     end
   end
 
+  context "role methods" do
+    context ".teacher?" do
+      it "returns false" do
+        teacher =  Teacher.create(
+                provider: "google",
+                uid: "12345678910",
+                email: "first@email.com",
+                first_name: "First",
+                last_name: "Last",
+                token: "abcdefg12345",
+                refresh_token: "12345abcdefg",
+                oauth_expires_at: DateTime.now
+              )
+        pass_img = PassImg.create(img: "http://image.jpg")
+        student = Student.create(name: "Name", username: "username", level: 3, language: "Somali", teacher: teacher, pass_img: pass_img)
+
+        expect(student.teacher?).to be_falsey
+      end
+    end
+
+    context ".teacher?" do
+      it "returns false" do
+        teacher =  Teacher.create(
+                provider: "google",
+                uid: "12345678910",
+                email: "first@email.com",
+                first_name: "First",
+                last_name: "Last",
+                token: "abcdefg12345",
+                refresh_token: "12345abcdefg",
+                oauth_expires_at: DateTime.now
+              )
+        pass_img = PassImg.create(img: "http://image.jpg")
+        student = Student.create(name: "Name", username: "username", level: 3, language: "Somali", teacher: teacher, pass_img: pass_img)
+
+        expect(student.student?).to be_truthy
+      end
+    end
+
+  end
+
 end

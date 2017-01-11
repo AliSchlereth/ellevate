@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :student do
     name "MyString"
-    username "MyString"
+    username "Username"
     sequence :level, (%w[1 2 3]).cycle do |level|
       level
     end

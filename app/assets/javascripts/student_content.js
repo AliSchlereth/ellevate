@@ -39,6 +39,5 @@ var translateSentence = function() {
 getContentImage();
 
 $(document).ready(function(){
-  $('.dash-stu-create').on('click', createStudentById);
   $('.submit-sentence').on('click', translateSentence);
 })
