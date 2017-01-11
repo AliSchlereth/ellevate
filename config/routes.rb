@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'students/login', to: "students/sessions#new", as: "student_login"
   post 'students/login', to: "students/sessions#create"
   get 'student_logout', to: "students/sessions#destroy"
+  get 'students/info', to: "students/info#show"
   resources :students, only: [:show, :index]
 
   namespace :teacher do
