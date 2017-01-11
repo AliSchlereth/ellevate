@@ -1,12 +1,11 @@
 <nav class="navbar navbar-default">
-  <!-- <div class="container"> -->
-    <!-- <div class="navbar-header"> -->
-      <%= link_to "ELLevate", root_path, class:"navbar-brand" %>
-    <!-- </div> -->
+  <ul class="nav navbar-nav navbar-left">
+    <li><%= link_to "WIDA", "https://www.wida.us/" %></li>
+  </ul>
+      <%= link_to "ELLevate", root_path, class:"navbar-brand-tch" %>
     <ul class="nav navbar-nav navbar-right">
       <% if current_user %>
         <li class="log-out"> <%= link_to "Log Out", teacher_logout_path %></li>
       <% end %>
     </ul>
-  <!-- </div> -->
 </nav>

@@ -1,0 +1,9 @@
+<nav class="navbar navbar-default">
+      <%= link_to "ELLevate", root_path, class:"navbar-brand-stu" %>
+    <ul class="nav navbar-nav navbar-right">
+      <% if current_user %>
+        <li> <%= link_to "Welcome #{current_user.name}", student_path(current_user)%></li>
+        <li class="log-out"> <%= link_to "", student_logout_path, class:"btn btn-danger btn-sm glyphicon glyphicon-remove" %></li>
+      <% end %>
+    </ul>
+</nav>
