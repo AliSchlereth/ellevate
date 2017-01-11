@@ -38,6 +38,8 @@ var translateSentence = function() {
 
 var refreshContent = function() {
   $('.content-photo').html('');
+  $('textarea.translated-sentence')[0].innerHTML = ''
+  $('textarea').val('');
   getContentImage();
 }
 
