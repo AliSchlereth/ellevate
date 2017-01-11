@@ -20,6 +20,5 @@ describe "user logs in as a student" do
     click_on "Sign In"
 
     expect(page).to have_content("Type your sentence below:")
-    expect(page).to have_content("#{student.name}")
   end
 end

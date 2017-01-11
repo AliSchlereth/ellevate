@@ -7,7 +7,8 @@ describe "student links to directions page" do
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(student)
 
     visit student_path(student)
-    click_on "?"
+    page.first('.glyphicon-question-sign').click
+    # click_on "?"
 
     expect(current_path).to eq(students_info_path)
     expect(page).to have_content("Directions")
