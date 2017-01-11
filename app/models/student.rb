@@ -10,4 +10,13 @@ class Student < ApplicationRecord
     random_selector = rand(0..19)
     Sentence.where(level: level)[random_selector]
   end
+
+  def teacher?
+    false
+  end
+
+  def student?
+    true
+  end
+
 end
