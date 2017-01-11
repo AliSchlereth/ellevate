@@ -1,5 +1,6 @@
 class Teachers::SessionsController < ApplicationController
   protect_from_forgery with: :null_session
+  # skip_before_action :verify_authenticity_token, only: [:create]
 
   def create
     user = Teacher.update_or_create(env["omniauth.auth"])
