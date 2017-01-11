@@ -9,8 +9,8 @@ var onGetStudents = function(data) {
       '<div class="col-md-2 stu-language">' + student.language + '</div>' +
       '<div class="col-md-2 stu-level">' + student.level + '</div>' +
       '<div class="col-md-2 stu-pass-img"><span class="' + student.img + '" aria-hidden="true"></span></div>' +
-      '<div class="btn btn-danger btn-xs dash-stu-delete">Delete</div>' +
-      '<div class="btn btn-warning btn-xs dash-stu-edit">Edit</div>' +
+      '<div class="btn btn-warning btn-xs dash-stu-edit pull-right">Edit</div>' +
+      '<div class="btn btn-danger btn-xs dash-stu-delete pull-right">Delete</div>' +
       '</div>'
     );
   }
