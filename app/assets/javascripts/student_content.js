@@ -36,8 +36,14 @@ var translateSentence = function() {
   .fail(onFail);
 }
 
+var refreshContent = function() {
+  $('.content-photo').html('');
+  getContentImage();
+}
+
 getContentImage();
 
 $(document).ready(function(){
   $('.submit-sentence').on('click', translateSentence);
+  $('.request-refresh').on('click', refreshContent)
 })
