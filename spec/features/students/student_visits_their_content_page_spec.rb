@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe "student visits their content page", js: true do
-  scenario "they see an image of an animal" do
+  xscenario "they see an image of an animal" do
     student = create(:student)
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(student)
     visit student_path(student)
@@ -21,4 +21,4 @@ describe "student sees their content page" do
 
     expect(page).to have_css('.sentence-frame')
   end
-end 
+end
