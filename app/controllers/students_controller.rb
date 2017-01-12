@@ -1,7 +1,7 @@
 class StudentsController < ApplicationController
 
   def show
-    @student = Student.find(params[:id])
+    @student = current_user
     @sentence = @student.sentence_frame
   end
 

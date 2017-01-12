@@ -13,7 +13,7 @@ var onGetContentImage = function(data) {
 
 var onGetTranslation = function(data) {
   var translatedMessage = data['message'];
-  $('textarea.translated-sentence')[0].innerHTML = translatedMessage
+  $('textarea.translated-sentence').val(translatedMessage);
 }
 
 var getContentImage = function() {
@@ -38,8 +38,7 @@ var translateSentence = function() {
 
 var refreshContent = function() {
   $('.content-photo').html('');
-  $('textarea.translated-sentence')[0].innerHTML = ''
-  $('textarea').val('');
+  $('textarea').val('')
   getContentImage();
 }
 
