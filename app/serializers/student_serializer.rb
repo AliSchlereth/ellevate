@@ -4,5 +4,4 @@ class StudentSerializer < ActiveModel::Serializer
   def img
     object.pass_img.img
   end
-
 end

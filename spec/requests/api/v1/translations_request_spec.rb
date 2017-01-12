@@ -4,6 +4,7 @@ describe "translation requests" do
   context "POST api/v1/translations" do
     it "returns a message translated by student's native language" do
       student = create(:student)
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(student)
       headers = {"CONTENT-TYPE" => "application/json"}
       params = {translation: {message: "This is a message."}}.to_json
 

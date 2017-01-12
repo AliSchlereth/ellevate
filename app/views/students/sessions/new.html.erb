@@ -1,5 +1,6 @@
-<div class="panel col-md-4 sign-in-panel">
-  <h3>Student Sign In</h3>
+<body>
+  <div class="panel col-md-4 sign-in-panel">
+    <h3>Student Sign In</h3>
     <div class="form-group">
       <%= form_tag({controller: "students/sessions", action: "create"}, method: :post, class: "form-group") do %>
         <%= label_tag :teacher %>
@@ -15,4 +16,5 @@
         <p><%= submit_tag "Sign In", class:"btn btn-default" %></p>
       <% end  %>
     </div>
-</div>
+  </div>
+</body>

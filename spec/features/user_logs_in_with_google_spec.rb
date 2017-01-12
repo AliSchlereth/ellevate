@@ -5,6 +5,7 @@ describe "user logs in with Google" do
     stub_omniauth
     visit root_path
     click_link "Sign in with Google"
+
     expect(page).to have_content("First Last")
     expect(page).to have_link("Log Out")
   end

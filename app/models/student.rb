@@ -8,7 +8,7 @@ class Student < ApplicationRecord
 
   def sentence_frame
     random_selector = rand(0..19)
-    Sentence.where(level: level)[random_selector]
+    Sentence.where(level: level)[random_selector].sentence_frame
   end
 
   def teacher?

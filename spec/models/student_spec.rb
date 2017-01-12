@@ -145,7 +145,30 @@ RSpec.describe Student, type: :model do
         expect(student.student?).to be_truthy
       end
     end
+  end
 
+  context "sentence_frame" do
+    it "returns a sentence by level" do
+      teacher =  Teacher.create(
+              provider: "google",
+              uid: "12345678910",
+              email: "first@email.com",
+              first_name: "First",
+              last_name: "Last",
+              token: "abcdefg12345",
+              refresh_token: "12345abcdefg",
+              oauth_expires_at: DateTime.now
+            )
+      pass_img = PassImg.create(img: "http://image.jpg")
+      student = Student.create(name: "Name", username: "username", level: 3, language: "Somali", teacher: teacher, pass_img: pass_img)
+      create_list(:sentence, 20, level: student.level)
+      create_list(:sentence, 4)
+
+      sentence = student.sentence_frame
+      expect(sentence).to be_a(String)
+      expect(sentence.include?("_____")).to be_truthy
+      expect(sentence.include?(".")).to be_truthy
+    end
   end
 
 end

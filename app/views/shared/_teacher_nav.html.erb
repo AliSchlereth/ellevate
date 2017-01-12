@@ -4,10 +4,10 @@
     <li><%= link_to "WIDA Levels", "https://www.wida.us/get.aspx?id=5" %></li>
     <li><%= link_to "WIDA Resource Booklet", "https://www.wida.us/standards/resource_guide_web.pdf" %></li>
   </ul>
-      <%= link_to "ELLevate", root_path, class:"navbar-brand-tch" %>
-    <ul class="nav navbar-nav navbar-right">
-      <% if current_user %>
-        <li class="log-out"> <%= link_to "Log Out", teacher_logout_path %></li>
-      <% end %>
-    </ul>
+    <%= link_to "ELLevate", root_path, class:"navbar-brand-tch" %>
+  <ul class="nav navbar-nav navbar-right">
+    <% if current_user %>
+      <li class="log-out"> <%= link_to "Log Out", teacher_logout_path %></li>
+    <% end %>
+  </ul>
 </nav>

@@ -8,7 +8,6 @@ describe "student links to directions page" do
 
     visit student_path(student)
     page.first('.glyphicon-question-sign').click
-    # click_on "?"
 
     expect(current_path).to eq(students_info_path)
     expect(page).to have_content("Directions")

@@ -1,40 +1,42 @@
-<div class="container-fluid">
-  <div class="panel">
-    <h3><%= current_user.first_name %> <%= current_user.last_name %></h3>
-  </div>
-  <div class="panel dash-create-stu">
-    <h3>Create Student</h3>
-    <form class="form-inline">
-      <div class="form-group">
-        <%= form_for @student, remote: true, class:"form-group" do |f|%>
-          <%= f.label :name %>
-          <%= f.text_field :name, class:"form-control dash-input input-field new-stu-name" %>
-          <%= f.label :username %>
-          <%= f.text_field :username, class:"form-control dash-input new-stu-username"%>
-          <%= f.label :language %>
-          <%= f.text_field :language, class:"form-control dash-input new-stu-language" %>
-          <%= f.label :level %>
-          <%= f.select(:level, [[1, 1], [2, 2], [3, 3]], {}, { :class => 'new-stu-level' }) %>
-          <%= f.label "password" %>
-          <%= f.collection_select(:pass_img_id, @pass_imgs, :id, :img, {include_blank: true}, {class:'new-stu-pass-img'}) %>
-          <button type="submit" class="btn btn-default dash-stu-create">Add Student</button>
-        <% end  %>
-      </div>
-    </form>
-  </div>
-  <div class="panel">
-    <div class="container-fluid">
-    <h3>Students</h3>
-      <div class="row">
-        <h4 class="col-md-2">Username</h4>
-        <h4 class="col-md-2">Name</h4>
-        <h4 class="col-md-2">Language</h4>
-        <h4 class="col-md-2">Level</h4>
-        <h4 class="col-md-2">Password Image</h4>
-      </div>
-      <div class="row" id="tch-dash-students">
+<body class="tch-dashboard-page">
+  <div class="container-fluid">
+    <div class="panel">
+      <h3><%= current_user.first_name %> <%= current_user.last_name %></h3>
+    </div>
+    <div class="panel dash-create-stu">
+      <h3>Create Student</h3>
+      <form class="form-inline">
+        <div class="form-group">
+          <%= form_for @student, remote: true, class:"form-group" do |f|%>
+            <%= f.label :name %>
+            <%= f.text_field :name, class:"form-control dash-input input-field new-stu-name" %>
+            <%= f.label :username %>
+            <%= f.text_field :username, class:"form-control dash-input new-stu-username"%>
+            <%= f.label :language %>
+            <%= f.text_field :language, class:"form-control dash-input new-stu-language" %>
+            <%= f.label :level %>
+            <%= f.select(:level, [[1, 1], [2, 2], [3, 3]], {}, { :class => 'new-stu-level' }) %>
+            <%= f.label "password" %>
+            <%= f.collection_select(:pass_img_id, @pass_imgs, :id, :img, {include_blank: true}, {class:'new-stu-pass-img'}) %>
+            <button type="submit" class="btn btn-default dash-stu-create">Add Student</button>
+          <% end  %>
+        </div>
+      </form>
+    </div>
+    <div class="panel">
+      <div class="container-fluid">
+      <h3>Students</h3>
+        <div class="row">
+          <h4 class="col-md-2">Username</h4>
+          <h4 class="col-md-2">Name</h4>
+          <h4 class="col-md-2">Language</h4>
+          <h4 class="col-md-2">Level</h4>
+          <h4 class="col-md-2">Password Image</h4>
+        </div>
+        <div class="row" id="tch-dash-students">
 
+        </div>
       </div>
     </div>
   </div>
-</div>
+</body>
