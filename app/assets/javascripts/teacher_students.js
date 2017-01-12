@@ -133,9 +133,6 @@ var updateStudentById = function() {
   .fail(onFail);
 }
 
-$(document).ready(function(){
-})
-
 $('.tch-dashboard-page').ready(function(){
   getAllStudents();
   $('.dash-stu-create').on('click', createStudentById);

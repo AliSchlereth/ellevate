@@ -1,12 +1,13 @@
 require "rails_helper"
 
-describe "teacher visits their dashboard" do
+describe "teacher visits their dashboard", js: true do
   context "they see all their students " do
-    xit "all students are listed alphabetically by level" do
+    it "all students are listed by level" do
       teacher = create(:teacher)
       student1, student2, student3 = create_list(:student, 3, teacher: teacher)
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(teacher)
       visit teacher_dashboard_path
+      sleep(2)
 
       expect(page).to have_content(student1.username)
       expect(page).to have_content(student1.name)
