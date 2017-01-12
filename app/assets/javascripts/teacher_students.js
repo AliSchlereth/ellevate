@@ -137,11 +137,13 @@ var updateStudentById = function() {
   .fail(onFail);
 }
 
-getAllStudents();
-
 $(document).ready(function(){
-    $('.dash-stu-create').on('click', createStudentById);
-    $('#tch-dash-students').on('click', '.dash-stu-edit', editStudentById )
-    $('#tch-dash-students').on('click', '.dash-stu-delete', deleteStudentById)
-    $('#tch-dash-students').on('click', '.dash-stu-update', updateStudentById)
+})
+
+$('.tch-dashboard-page').ready(function(){
+  getAllStudents();
+  $('.dash-stu-create').on('click', createStudentById);
+  $('#tch-dash-students').on('click', '.dash-stu-edit', editStudentById )
+  $('#tch-dash-students').on('click', '.dash-stu-delete', deleteStudentById)
+  $('#tch-dash-students').on('click', '.dash-stu-update', updateStudentById)
 })
