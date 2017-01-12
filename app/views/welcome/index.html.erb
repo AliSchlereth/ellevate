@@ -1,27 +1,28 @@
+<body>
   <div class="jumbotron">
     <div class="container-fluid">
-    <h1>Welcome to ELLevate</h1>
-    <h3>Let's learn some English</h3>
-  </div>
-</div>
-<div class="container-fluid">
-  <div class="row">
-  </div>
-  <div class="row">
-    <div class="container-fluid">
-      <div class="panel teacher-panel col-md-5">
-        <h3>Teachers</h3>
-        <% if current_user && current_user.teacher? %>
-          <ul><%= link_to "Welcome #{current_user.first_name} #{current_user.last_name}", teacher_dashboard_path, class:"btn btn-default"%><ul>
-        <% else %>
-          <p><%= link_to "Sign in with Google", teacher_login_path, class:"btn btn-default" %></p>
-        <% end %>
-      </div>
-      <div class="panel student-panel col-md-5">
-        <h3>Students</h3>
-        <p><%= link_to "Sign In", student_login_path, class:"btn btn-default"%></p>
-      </div>
-
+      <h1>Welcome to ELLevate</h1>
+      <h3>Let's learn some English</h3>
     </div>
   </div>
-</div>
+  <div class="container-fluid">
+    <div class="row">
+    </div>
+    <div class="row">
+      <div class="container-fluid">
+        <div class="panel teacher-panel col-md-5">
+          <h3>Teachers</h3>
+          <% if current_user && current_user.teacher? %>
+            <ul><%= link_to "Welcome #{current_user.first_name} #{current_user.last_name}", teacher_dashboard_path, class:"btn btn-default"%><ul>
+          <% else %>
+            <p><%= link_to "Sign in with Google", teacher_login_path, class:"btn btn-default" %></p>
+          <% end %>
+        </div>
+        <div class="panel student-panel col-md-5">
+          <h3>Students</h3>
+          <p><%= link_to "Sign In", student_login_path, class:"btn btn-default"%></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

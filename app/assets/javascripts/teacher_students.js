@@ -16,10 +16,6 @@ var onGetStudents = function(data) {
   }
 }
 
-var onFail = function(err) {
-  console.error(err);
-}
-
 var getAllStudents = function() {
   return $.ajax({
     method: 'GET',

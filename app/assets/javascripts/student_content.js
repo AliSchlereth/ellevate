@@ -42,16 +42,6 @@ var refreshContent = function() {
   getContentImage();
 }
 
-$(document).ready(function(){
-  $('.submit-sentence').on('click', translateSentence);
-  $('.request-refresh').on('click', refreshContent)
-
-  $('form.sentence-form').on('submit', function(event){
-    event.preventDefault();
-  });
-
-})
-
 $('.student-content-page').ready(function(){
   getContentImage();
   $('.submit-sentence').on('click', translateSentence);
