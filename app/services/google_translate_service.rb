@@ -8,7 +8,6 @@ class GoogleTranslateService
   end
 
   def translate(language_code, message)
-    # response = Faraday.get("https://translation.googleapis.com/language/translate/v2?key=#{ENV["GOOGLE_API_KEY"]}&source=en&target=#{language_code}&q=#{message}")
     response = @conn.get("?key=#{ENV["GOOGLE_API_KEY"]}&source=en&target=#{language_code}&q=#{message}")
     parse(response)
   end

@@ -19,3 +19,16 @@ describe "teacher visits their dashboard", js: true do
     end
   end
 end
+
+describe "teacher links to WIDA" do
+  scenario "they can link to 3 WIDA pages" do
+    teacher = create(:teacher)
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(teacher)
+
+    visit teacher_dashboard_path
+
+    expect(page).to have_link("WIDA", href: "https://www.wida.us/")
+    expect(page).to have_link("WIDA Levels", href: "https://www.wida.us/get.aspx?id=5")
+    expect(page).to have_link("WIDA Resource Booklet", href: "https://www.wida.us/standards/resource_guide_web.pdf")
+  end
+end

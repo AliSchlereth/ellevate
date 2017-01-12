@@ -1,10 +1,11 @@
 require "rails_helper"
 
 describe "user logs in with Google" do
-  xscenario "they link to google authorization" do
+  scenario "they link to google authorization" do
     stub_omniauth
     visit root_path
     click_link "Sign in with Google"
+
     expect(page).to have_content("First Last")
     expect(page).to have_link("Log Out")
   end

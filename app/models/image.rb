@@ -19,5 +19,4 @@ class Image
     tag = images_data[:hits][random_selector][:tags]
     first_tag = tag.split(',')[0]
   end
-
 end

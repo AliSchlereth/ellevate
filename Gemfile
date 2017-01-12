@@ -43,6 +43,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'launchy'
   gem 'database_cleaner'
+  gem 'simplecov', :require => false, :group => :test
 end
 
 group :development do
@@ -53,6 +54,7 @@ end
 
 group :test do
   gem 'selenium-webdriver'
+  # gem 'capybara-webkit', '~> 1.1.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
