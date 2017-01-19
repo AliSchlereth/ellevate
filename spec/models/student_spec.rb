@@ -165,9 +165,9 @@ RSpec.describe Student, type: :model do
       create_list(:sentence, 4)
 
       sentence = student.sentence_frame
-      expect(sentence).to be_a(String)
-      expect(sentence.include?("_____")).to be_truthy
-      expect(sentence.include?(".")).to be_truthy
+      expect(sentence).to be_a(Sentence)
+      expect(sentence.sentence_frame.include?("_____")).to be_truthy
+      expect(sentence.sentence_frame.include?(".")).to be_truthy
     end
   end
 
