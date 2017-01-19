@@ -21,3 +21,42 @@ body {
   border-radius: 0px;
   box-shadow: 0px 1px 5px 0px rgba(50, 50, 50, 0.43);
 }
+
+.btn-success {
+  background-color: #768cab;
+  border: white;
+}
+
+.btn-success:hover, .btn-success:focus {
+  background-color: #014c8c !important;
+}
+
+.btn-success:active{
+  background-color: #183A69 !important;
+}
+
+.btn-success:hover {
+  background-color: #014c8c;
+}
+
+.btn-danger {
+  background-color: #ad301d ;
+  border: white;
+}
+
+.btn-danger:hover, .btn-danger:focus {
+  background-color: #c16848 !important;
+}
+
+.btn-danger:active {
+  background-color: #6c280f !important;
+}
+
+.btn-warning {
+  background-color: #E09519;
+  border: white;
+}
+
+.btn-warning:hover, .btn-warning:focus {
+  background-color: #da9e3c!important;
+}

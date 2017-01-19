@@ -105,7 +105,7 @@ var convertPassImgToSelect = function(student) {
 
 var convertEditButtonToUpdate = function(student) {
   var stuEditButton = student.find('.dash-stu-edit')[0];
-  stuEditButton.outerHTML = '<div class="btn btn-success btn-xs dash-stu-update">Update</div>'
+  stuEditButton.outerHTML = '<div class="btn btn-success btn-xs dash-stu-update pull-right">Update</div>'
  }
 
 var editStudentById = function() {

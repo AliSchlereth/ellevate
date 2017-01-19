@@ -1,17 +1,20 @@
 .navbar-default {
-  background: linear-gradient(#D3E397, #B0BD80);
-  border-radius: 0px;
-  border-color: darkgrey;
-  box-shadow: 0px 1px 5px 0px rgba(50, 50, 50, 0.43);
+  // background: linear-gradient(#D3E397, #B0BD80);
+  // border-radius: 0px;
+  // border-color: darkgrey;
+  // box-shadow: 0px 1px 5px 0px rgba(50, 50, 50, 0.43);
   text-align: center;
-
+  background-color: #98B861;
+  border: none;
 }
 
 .navbar-brand {
   color: #45556D !important;
+  // font-family: 'Poppins', sans-serif !important;
+  font-family: 'Crete Round', serif !important;
   font-weight: bold;
   text-shadow: 1px 0px lightgrey;
-  font-size: 2em;
+  font-size: 3em;
   float: left;
   margin-left: 43%;
   margin-right: 35%;
@@ -19,23 +22,26 @@
 
 .navbar-brand-tch {
   color: #45556D !important;
+  // font-family: 'Poppins', sans-serif !important;
+  font-family: 'Crete Round', serif !important;
   font-weight: bold;
   text-shadow: 1px 0px lightgrey;
-  font-size: 2em;
+  font-size: 3em;
   float: left;
-  margin-left: 12%;
+  // margin-left: 5%;
   margin-right: 25%;
 
 }
 
 .navbar-brand-stu {
   color: #45556D !important;
+  font-family: 'Crete Round', serif !important;
   font-weight: bold;
   text-shadow: 1px 0px lightgrey;
-  font-size: 2em;
+  font-size: 3em;
   float: left;
   margin-left: 45%;
-  margin-right: 20%;
+  margin-right: 10%;
 }
 
 .navbar-header {
@@ -47,4 +53,14 @@
 a {
   margin-right: 20px;
   padding-left: 0px;
+  font-size: 1.5em;
+}
+
+.nav-btn {
+  margin-top: 10%;
+  padding: 10px !important;
+  font-size: 1.5em;
+}
+
+.glyphicon-question-sign {
 }
