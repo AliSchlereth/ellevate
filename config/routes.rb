@@ -21,6 +21,7 @@ Rails.application.routes.draw do
       patch 'teachers/students/:id', to: "teachers/students#update"
       get 'image', to: "images#show"
       post 'translation', to: "translations#show"
+      get 'sentence', to: "sentences#show"
     end
   end
 end
