@@ -16,7 +16,7 @@ space to enter their sentence. Students click the arrow key and watch their
 sentence be translated into their home language.
 
 Sentence frames and academic supports are built upon the guideline of the
-[WIDA]=(https://www.wida.us/) Consortium.  
+[WIDA](https://www.wida.us/) Consortium.  
 
 # How to install
 
