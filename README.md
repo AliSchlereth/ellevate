@@ -50,6 +50,7 @@ Next: run the following command in your terminal:
 `rake db:create db:migrate db:seed db:test:prepare`
 
 ### Fifth:
+Run the test suite:
 
 Run `rspec`   
 
