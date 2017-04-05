@@ -6,6 +6,7 @@
   </ul>
     <%= link_to "ELLevate", root_path, class:"navbar-brand-tch" %>
   <ul class="nav navbar-nav navbar-right">
+    <li> <%= link_to "Directions", students_info_path%></li>
     <% if current_user %>
       <li class="log-out"> <%= link_to "Log Out", teacher_logout_path %></li>
     <% end %>
