@@ -3,8 +3,8 @@
   <ul class="nav navbar-nav navbar-right">
     <% if current_user %>
       <li> <%= link_to "Welcome #{current_user.name}", student_path(current_user)%></li>
-      <li class="log-out"> <%= link_to "", students_info_path, class:"btn btn-warning btn-sm glyphicon glyphicon-question-sign" %></li>
-      <li class="log-out"> <%= link_to "", student_logout_path, class:"btn btn-danger btn-sm glyphicon glyphicon-remove" %></li>
+      <li class="log-out"> <%= link_to "", students_info_path, class:"btn btn-warning btn-sm glyphicon glyphicon-question-sign nav-btn" %></li>
+      <li class="log-out"> <%= link_to "", student_logout_path, class:"btn btn-danger btn-sm glyphicon glyphicon-remove nav-btn" %></li>
     <% end %>
   </ul>
 </nav>
