@@ -4,7 +4,7 @@ var onFail = function(err) {
 
 var onGetContentImage = function(data) {
   var imageUrl = data['image_url'];
-  var imageTag = data['animal']
+  var imageTag = data['animal'];
   $('.content-photo').append(
     '<img src="' + imageUrl + '" class="content-img">' +
     '<h3>' + imageTag + '</h3>'
